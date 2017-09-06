@@ -22,7 +22,7 @@ def inasis(array)
   str_sum = 0 
   array.each do |ele|
     if ele.to_i == 0
-      str_sum+=1        
+       str_sum+=1        
     end
   end   
   return str_sum
@@ -63,7 +63,7 @@ def aprobados(file_name, nota=5)
 end
 
 puts 'Sistema de Alumnos'
-puts  'press enter'
+puts 'press enter'
 
 option = gets.chomp
 
@@ -84,7 +84,7 @@ while option != '4'
     when '3'
       puts "Ingrese nota aprobación"
       nota = gets.chomp.to_f
-      if nota == 0
+      if nota.zero?
         aprobados("alumnos.csv")
       else
         aprobados("alumnos.csv", nota)      
