@@ -75,24 +75,24 @@ while option != '4'
   puts 'Ingresa 4 para salir'
 
   option = gets.chomp
-  case  option
-  when '1'
-    add_alumno("alumnos.csv")
-    puts 'El archivo se ha generado!'
-  when '2'
-    inasistentes("alumnos.csv")
-  when '3'
-    puts "Ingrese nota aprobación"
-    nota = gets.chomp.to_f
-    if nota == 0
-      aprobados("alumnos.csv")
-    else
-      aprobados("alumnos.csv", nota)      
-    end    
+  puts case  option
+    when '1'
+      add_alumno("alumnos.csv")
+      puts 'El archivo se ha generado!'
+    when '2'
+      inasistentes("alumnos.csv")
+    when '3'
+      puts "Ingrese nota aprobación"
+      nota = gets.chomp.to_f
+      if nota == 0
+        aprobados("alumnos.csv")
+      else
+        aprobados("alumnos.csv", nota)      
+      end    
 
-  when '4' 
-    puts "Te extrañaremos :'("
-  else
-    'Ingresa un número del 1 al 4'
-  end
+    when '4' 
+      puts "Te extrañaremos :'("
+    else
+      'Ingresa un número del 1 al 4'
+    end
 end
