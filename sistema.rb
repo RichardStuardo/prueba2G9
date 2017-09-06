@@ -9,7 +9,7 @@ def prom(array)
   sum = 0
   str_sum = 0 
   array.each do |ele|
-    unless ele.to_i == 0
+    unless ele.to_i.zero?
       sum += ele.to_i
     else
       str_sum+=1        
@@ -21,8 +21,8 @@ end
 def inasis(array)
   str_sum = 0 
   array.each do |ele|
-    if ele.to_i == 0
-       str_sum+=1        
+    if ele.to_i.zero?
+      str_sum+=1        
     end
   end   
   return str_sum
@@ -63,7 +63,7 @@ def aprobados(file_name, nota=5)
 end
 
 puts 'Sistema de Alumnos'
-puts 'press enter'
+puts  'press enter'
 
 option = gets.chomp
 
@@ -75,7 +75,7 @@ while option != '4'
   puts 'Ingresa 4 para salir'
 
   option = gets.chomp
-  puts case  option
+   case  option
     when '1'
       add_alumno("alumnos.csv")
       puts 'El archivo se ha generado!'
